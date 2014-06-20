@@ -1,2 +1,7 @@
-<h1>Demo#index</h1>
+<h1>Demo#HelloFromindex</h1>
 <p>Hello World.</p>
+
+<a href="/demo/hello">Hello page 1</a><br/>
+<%= link_to('Hello page 2', {:action => 'hello'}) %><br/>
+
+<%= link_to('Hello page with params', {:action => 'hello', :page =>'5', :id =>'20'}) %>

@@ -1,0 +1,32 @@
+<%@page_title = 'Admin Users Index'%>
+<%= link_to("Add New Admin User", {:action => 'new'}, :class => 'action new') %>
+
+<table class = "listing" summary="Admin User list">
+	<tr class = "header">
+		<th>&nbsp;</th>
+		<th>First name</th>
+		<th>Last name</th>
+		<th>email</th>
+		<th>username</th>
+		<th>Created</th>
+		<th>last Updated</th>
+		<th>Actions</th>
+	</tr>
+
+	<% @admin_users.each do |admin_user| %>
+	<tr class =<%= cycle('odd','even') %> >
+		<td><%= admin_user.id %></td>
+		<td><%= admin_user.first_name %></td>
+		<td><%= admin_user.last_name %></td>
+		<td class = "center"><%= admin_user.email %></td>
+		<td class = "center"><%= admin_user.username %></td>
+		<td class = "center"><%= admin_user.created_at %></td>
+		<td class = "center"><%= admin_user.updated_at %></td>
+		<td class = "actions">
+			<%= link_to("Edit", {:action => 'edit', :id => admin_user.id}, :class => 'action edit') %>
+			<%= link_to("Delete", {:action => 'delete', :id => admin_user.id}, :class => 'action delete') %>
+		</td>
+	</tr>
+	<% end %>
+</table>
+</div>
